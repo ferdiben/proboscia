@@ -20,7 +20,9 @@ $text = trim($text);
 $text = strtolower($text);
 
 if($text == "/cosaamo"){
-  $res = "La birra!!!!!!!!! u'\1F60D'";
+
+  $emoticons = "\U1F60D";
+  $res =  "La birra!!!!!! ".json_decode('"'.$emoticons.'"');
 }
 
 header("Content-Type: application/json");
