@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 if($text == "cosa ti piace?"){
-  $res = "La birra!!!!!!!!! U+1F60D";
+  $res = "La birra!!!!!!!!!".  u'\1F60D';
 }
 
 header("Content-Type: application/json");
