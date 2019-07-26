@@ -19,8 +19,8 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-if($text == "cosa ti piace?"){
-  $res = "La birra!!!!!!!!!".  u'\1F60D';
+if($text == "/cosaamo"){
+  $res = "La birra!!!!!!!!! u'\1F60D'";
 }
 
 header("Content-Type: application/json");
