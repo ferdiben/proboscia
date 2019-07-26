@@ -19,7 +19,11 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
+if($text == "cosa ti piace?"){
+  $res = "La birra!!!!!!!!! U+1F60D";
+}
+
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $text);
+$parameters = array('chat_id' => $chatId, "text" => $res);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
