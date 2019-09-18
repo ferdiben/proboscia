@@ -40,7 +40,7 @@ if($text == "/slotmachine"){
 	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
-	$parameters["photo"] = "https://media2.giphy.com/media/26BRFrAgGF6wtebio/giphy.gif"
+	$parameters["photo"] = "https://media2.giphy.com/media/26BRFrAgGF6wtebio/giphy.gif";
 	$parameters["method"] = "sendMessage";
 	echo json_encode($parameters);
 }
