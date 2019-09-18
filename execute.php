@@ -22,6 +22,11 @@ $text = strtolower($text);
 
 if ($username == "aleproscia") {
 	$res = "Alterego, ti va una birra???";
+
+	header("Content-Type: application/json");
+$parameters = array('chat_id' => $chatId, "text" => $res);
+$parameters["method"] = "sendMessage";
+echo json_encode($parameters);
 }
 
 
@@ -30,9 +35,11 @@ if($text == "/cosaamo"){
 
   $emoticons = "\U1F60D";
   $res =  "La birra!!!!!!";
-}
 
-header("Content-Type: application/json");
+  header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $res);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
+}
+
+
