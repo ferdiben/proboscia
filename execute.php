@@ -22,24 +22,26 @@ $text = strtolower($text);
 
 if ($username == "aleproscia") {
 	$res = "Alterego, ti va una birra???";
-
 	header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $res);
-$parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+	$parameters = array('chat_id' => $chatId, "text" => $res);
+	$parameters["method"] = "sendMessage";
+	echo json_encode($parameters);
 }
-
-
 
 if($text == "/cosaamo"){
-
-  $emoticons = "\U1F60D";
-  $res =  "La birra!!!!!!";
-
-  header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $res);
-$parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+	$res =  "La birra!!!!!!";
+	header("Content-Type: application/json");
+	$parameters = array('chat_id' => $chatId, "text" => $res);
+	$parameters["method"] = "sendMessage";
+	echo json_encode($parameters);
 }
 
+if($text == "/slotmachine"){
+	$res =  "din din din din din din din din din din";
+	header("Content-Type: application/json");
+	$parameters = array('chat_id' => $chatId, "text" => $res);
+	$parameters["photo"] = "https://media2.giphy.com/media/26BRFrAgGF6wtebio/giphy.gif"
+	$parameters["method"] = "sendMessage";
+	echo json_encode($parameters);
+}
 
