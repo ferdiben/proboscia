@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 
-if (strtolower($username) === "aleproscia") {
+if (strpos($username, "aleproscia") !== false) {
 	$res = "Alterego, ti va una birra???";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
@@ -28,7 +28,7 @@ if (strtolower($username) === "aleproscia") {
 	echo json_encode($parameters);
 }
 
-if(checkCommand("/cosaamo")){
+if(strpos($text, "/cosaamo") !== false){
 	$res =  "La birra!!!!!!";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
@@ -36,7 +36,7 @@ if(checkCommand("/cosaamo")){
 	echo json_encode($parameters);
 }
 
-if(checkCommand("/slotmachine")){
+if(strpos($text, "/slotmachine") !== false){
 	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato2.jpg" );
@@ -44,16 +44,10 @@ if(checkCommand("/slotmachine")){
 	echo json_encode($parameters);
 }
 
-if($checkCommand("/slotmachine hippy"){
+if(strpos($text, "/slotmachine hippy") !== false){
 	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
-	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato.jpg" );
+	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato2.jpg" );
 	$parameters["method"] = "sendPhoto";
 	echo json_encode($parameters);
-}
-
-
-function checkCommand($cmd) {
-    global $text;
-    return substr($text, 0, strlen($cmd)) === $cmd;
 }
