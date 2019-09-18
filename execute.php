@@ -21,7 +21,7 @@ $text = strtolower($text);
 
 
 if ($username == "aleproscia") {
-	$res = "Alterego, ti va una birra???"
+	$res = "Alterego, ti va una birra???";
 }
 
 
