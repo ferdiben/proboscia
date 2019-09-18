@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 
-if ($username == "@aleproscia") {
+if (strtolower($username) === "aleproscia") {
 	$res = "Alterego, ti va una birra???";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
@@ -39,8 +39,15 @@ if($text == "/cosaamo"){
 if($text == "/slotmachine"){
 	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
-	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://media2.giphy.com/media/26BRFrAgGF6wtebio/giphy.gif" );
+	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato2.jpg" );
 	$parameters["method"] = "sendPhoto";
 	echo json_encode($parameters);
 }
 
+if($text == "/slotmachine hippy"){
+	$res =  "din din din din din din din din din din";
+	header("Content-Type: application/json");
+	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato.jpg" );
+	$parameters["method"] = "sendPhoto";
+	echo json_encode($parameters);
+}
