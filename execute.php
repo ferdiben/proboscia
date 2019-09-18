@@ -39,15 +39,19 @@ if(strpos($text, "/cosaamo") !== false){
 if(strpos($text, "/slotmachine") !== false){
 	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
-	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato2.jpg" );
+	if(strpos($text, "hippy") !== false){
+		$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato.jpg" );
+	} else {
+		$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato2.jpg" );
+	}
 	$parameters["method"] = "sendPhoto";
 	echo json_encode($parameters);
 }
 
-if(strpos($text, "/slotmachine hippy") !== false){
-	$res =  "din din din din din din din din din din";
+if(strpos($text, "/guglielmotell") !== false){
+	$res =  "La birra!!!!!!";
 	header("Content-Type: application/json");
-	$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato2.jpg" );
-	$parameters["method"] = "sendPhoto";
+	$parameters = array('chat_id' => $chatId, "video" => "https://proboscia.herokuapp.com/tell.mp4");
+	$parameters["method"] = "sendMessage";
 	echo json_encode($parameters);
 }
