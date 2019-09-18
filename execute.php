@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 
-if ($username == "aleproscia") {
+if ($username == "@aleproscia") {
 	$res = "Alterego, ti va una birra???";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
