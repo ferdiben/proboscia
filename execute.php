@@ -19,10 +19,17 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
+
+if ($username == "aleproscia") {
+	$res = "Alterego, ti va una birra???"
+}
+
+
+
 if($text == "/cosaamo"){
 
   $emoticons = "\U1F60D";
-  $res =  "La birra!!!!!! ".json_decode('"'.$emoticons.'"');
+  $res =  "La birra!!!!!!";
 }
 
 header("Content-Type: application/json");
