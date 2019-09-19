@@ -37,6 +37,7 @@ if(strpos($text, "/cosaamo") !== false){
 }
 
 if(strpos($text, "/slotmachine") !== false){
+	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
 	if(strpos($text, "hippy") !== false){
 		$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato.jpg" );
@@ -48,9 +49,10 @@ if(strpos($text, "/slotmachine") !== false){
 }
 
 if(strpos($text, "/guglielmotell") !== false){
+	$res =  "La birra!!!!!!";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "video" => "https://proboscia.herokuapp.com/tell.mp4");
-	$parameters["method"] = "sendVideo";
+	$parameters["method"] = "sendMessage";
 	echo json_encode($parameters);
 }
 
