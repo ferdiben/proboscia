@@ -7,7 +7,7 @@ if(!$update)
   exit;
 }
 
-$message = isset($update['message']) ? $update['message'] : "";
+$message = isset($update['message']) ? $update['message'] : "";f
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
@@ -37,7 +37,6 @@ if(strpos($text, "/cosaamo") !== false){
 }
 
 if(strpos($text, "/slotmachine") !== false){
-	$res =  "din din din din din din din din din din";
 	header("Content-Type: application/json");
 	if(strpos($text, "hippy") !== false){
 		$parameters = array('chat_id' => $chatId, "text" => $res, "photo" => "https://proboscia.herokuapp.com/prosciato.jpg" );
@@ -49,9 +48,16 @@ if(strpos($text, "/slotmachine") !== false){
 }
 
 if(strpos($text, "/guglielmotell") !== false){
-	$res =  "La birra!!!!!!";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "video" => "https://proboscia.herokuapp.com/tell.mp4");
-	$parameters["method"] = "sendMessage";
+	$parameters["method"] = "sendVideo";
 	echo json_encode($parameters);
 }
+
+
+
+
+
+
+
+
