@@ -20,6 +20,13 @@ $text = trim($text);
 $text = strtolower($text);
 
 
+if(strpos($text, "setting") !== false){
+	header("Content-Type: application/json");
+	$parameters = array('chat_id' => $chatId, "text" => $message);
+	$parameters["method"] = "sendMessage";
+	echo json_encode($parameters);
+}
+
 if (strpos($username, "aleproscia") !== false) {
 	$res = "Alterego, ti va una birra???";
 	header("Content-Type: application/json");
