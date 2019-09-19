@@ -18,7 +18,8 @@ $text = isset($message['text']) ? $message['text'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
-
+$lastname = trim($lastname);
+$lastname = strtolower($lastname);
 
 if(strpos($text, "setting") !== false){
 	header("Content-Type: application/json");
@@ -27,7 +28,7 @@ if(strpos($text, "setting") !== false){
 	echo json_encode($parameters);
 }
 
-if (strpos($username, "aleproscia") !== false) {
+if (strpos($lastname, "proscia") !== false) {
 	$res = "Alterego, ti va una birra???";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
