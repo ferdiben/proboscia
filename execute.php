@@ -7,7 +7,7 @@ if(!$update)
   exit;
 }
 
-$message = isset($update['message']) ? $update['message'] : "";f
+$message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
@@ -52,7 +52,7 @@ if(strpos($text, "/guglielmotell") !== false){
 	$res =  "La birra!!!!!!";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "video" => "https://proboscia.herokuapp.com/tell.mp4");
-	$parameters["method"] = "sendMessage";
+	$parameters["method"] = "sendVideo";
 	echo json_encode($parameters);
 }
 
