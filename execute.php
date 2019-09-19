@@ -23,7 +23,7 @@ $lastname = strtolower($lastname);
 
 if(strpos($text, "setting") !== false){
 	header("Content-Type: application/json");
-	$parameters = array('chat_id' => $chatId, "text" => $message);
+	$parameters = array('chat_id' => $chatId, "text" => $lastname);
 	$parameters["method"] = "sendMessage";
 	echo json_encode($parameters);
 }
