@@ -7,7 +7,7 @@ if(!$update)
   exit;
 }
 
-$from = isset($message['chat']['from']['username']) ? $message['from']['username'] : "";
+
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
@@ -17,6 +17,9 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 
+$from = $message['chat']['from']['username'];
+$from = trim($from);
+$from = strtolower($from);
 $text = trim($text);
 $text = strtolower($text);
 $lastname = trim($lastname);
@@ -31,8 +34,8 @@ if(strpos($text, "setting") !== false){
 	echo json_encode($parameters);
 }
 
-if (strpos($from, "aleproscia") !== false && rand(0,10) % 3 == 0) {
-	$res = "Alterego, ti va una birra???";
+if (strpos($from, "raciopbot") !== false && rand(0,10) % 3 == 0) {
+	$res = "Zitto, stupido bot!!!!!";
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
 	$parameters["method"] = "sendMessage";
