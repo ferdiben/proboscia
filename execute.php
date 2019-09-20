@@ -28,7 +28,7 @@ $lastname = strtolower($lastname);
 
 
 if(strpos($text, "/primi") !== false){
-	$res =  $from;
+	$res =  $message;
 	header("Content-Type: application/json");
 	$parameters = array('chat_id' => $chatId, "text" => $res);
 	$parameters["method"] = "sendMessage";
