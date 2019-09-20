@@ -27,10 +27,10 @@ $lastname = strtolower($lastname);
 
 
 
-
-if(strpos($text, "primi") !== false){
+if(strpos($text, "/primi") !== false){
+	$res =  $from;
 	header("Content-Type: application/json");
-	$parameters = array('chat_id' => $chatId, "text" => $lastname);
+	$parameters = array('chat_id' => $chatId, "text" => $res);
 	$parameters["method"] = "sendMessage";
 	echo json_encode($parameters);
 }
