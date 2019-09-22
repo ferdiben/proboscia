@@ -43,6 +43,14 @@ if (strpos($from, "raciopbot") !== false && rand(0,10) % 3 == 0) {
 	echo json_encode($parameters);
 }
 
+if(strpos($text, "/proboscia") !== false){
+	$res =  "Cosa vuoi?";
+	header("Content-Type: application/json");
+	$parameters = array('chat_id' => $chatId, "text" => $res);
+	$parameters["method"] = "sendMessage";
+	echo json_encode($parameters);
+}
+
 if(strpos($text, "/cosaamo") !== false){
 	$res =  "La birra!!!!!!";
 	header("Content-Type: application/json");
